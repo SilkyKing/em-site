@@ -387,36 +387,8 @@
         <p>There are no wrong answers here. I'd rather hear who you really are than a perfect application. Write to me like you'd write to a friend.</p>
       </div>
 
-      <!-- ============================================================
-           FORM WIRING — READ THIS, IT'S EASY
-           ------------------------------------------------------------
-           This styled form works RIGHT NOW with no account, using
-           Formspree as a no-login fallback. Two ways to make it live:
-
-           OPTION A (fastest, no account needed to test):
-             1. Go to https://formspree.io, create a free form.
-             2. Replace  YOUR_FORM_ID  in the action="" below with your ID.
-             Submissions arrive in your email + Formspree dashboard.
-
-           OPTION B (recommended — Kit / ConvertKit, owns the audience):
-             1. In Kit, build a Form, copy its "HTML" embed snippet.
-             2. Paste that snippet inside the <!-- KIT EMBED SLOT --> block
-                below, and DELETE or comment out this styled <form>.
-             3. Map the 9 fields to Kit custom fields per 04-form-fields.md.
-             Keep this styled form live until you've pasted the Kit embed.
-
-           The @yourhandle token elsewhere on the page is your Instagram
-           handle — find/replace @yourhandle site-wide before deploying.
-           ============================================================ -->
-
-      <!-- ===== KIT EMBED SLOT (paste Kit form HTML here, then remove the styled form below) =====
-      <div class="kit-embed">
-        PASTE YOUR KIT (CONVERTKIT) EMBED CODE HERE
-      </div>
-      ====================================================================================== -->
-
-      <!-- ===== APPLICATION FORM — wired to Kit (form 9607341 / uid 498bac076c) ===== -->
-      <!-- Submits to Kit via AJAX (ck.5.js loaded near </body>); shows Kit's success message inline. -->
+      <!-- APPLICATION FORM. Posts to Kit form 9607341 via the handler near the end of the page,
+           which shows the inline success message. Field names map to Kit custom fields. -->
       <form id="application-form" action="https://app.kit.com/forms/9607341/subscriptions" method="post">
         <div data-element="fields">
         <!-- 1. Name -->
