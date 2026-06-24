@@ -407,31 +407,35 @@
       </div>
       ====================================================================================== -->
 
-      <!-- ===== STYLED FALLBACK FORM (Formspree) — live until you swap in Kit ===== -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- ===== APPLICATION FORM — wired to Kit (form 9607341 / uid 498bac076c) ===== -->
+      <!-- Submits to Kit via AJAX (ck.5.js loaded near </body>); shows Kit's success message inline. -->
+      <form action="https://app.kit.com/forms/9607341/subscriptions" method="post"
+            class="seva-form formkit-form" data-sv-form="9607341" data-uid="498bac076c"
+            data-format="inline" data-version="5">
+        <div data-element="fields">
         <!-- 1. Name -->
         <div class="field">
           <label for="name">Your name <span class="req">*</span></label>
-          <input type="text" id="name" name="name" autocomplete="name" required />
+          <input type="text" id="name" name="fields[first_name]" autocomplete="name" required />
         </div>
 
         <!-- 2. Email -->
         <div class="field">
           <label for="email">Email <span class="req">*</span></label>
           <span class="help">So I can write back to you, even if I'm slow. This is the only sure way to reach you off Instagram.</span>
-          <input type="email" id="email" name="email" autocomplete="email" required />
+          <input type="email" id="email" name="email_address" autocomplete="email" required />
         </div>
 
         <div class="form-row">
           <!-- 3. Location -->
           <div class="field">
             <label for="location">Where you're writing from <span class="req">*</span></label>
-            <input type="text" id="location" name="location" placeholder="City, country" required />
+            <input type="text" id="location" name="fields[location]" placeholder="City, country" required />
           </div>
           <!-- 5. Dutch level -->
           <div class="field">
             <label for="dutch">Your Dutch <span class="req">*</span></label>
-            <select id="dutch" name="dutch_level" required>
+            <select id="dutch" name="fields[dutch_level]" required>
               <option value="" disabled selected>Choose one…</option>
               <option value="Native">Native — it's my mother tongue</option>
               <option value="Fluent">Fluent — I live in it comfortably</option>
@@ -445,43 +449,44 @@
         <div class="field">
           <label for="why">Why does this call to you? <span class="req">*</span></label>
           <span class="help">The real reason. The one underneath the practical one.</span>
-          <textarea id="why" name="why_this_calls" required></textarea>
+          <textarea id="why" name="fields[why_this_calls]" required></textarea>
         </div>
 
         <!-- 6. Availability -->
         <div class="field">
           <label for="availability">When could you start, and how long could you stay? <span class="req">*</span></label>
           <span class="help">An honest guess is perfect — earliest start date and how long feels right to you.</span>
-          <input type="text" id="availability" name="availability" placeholder="e.g. From September, for 6 months to a year" required />
+          <input type="text" id="availability" name="fields[availability]" placeholder="e.g. From September, for 6 months to a year" required />
         </div>
 
         <!-- 7. Instagram handle -->
         <div class="field">
           <label for="instagram">Your Instagram handle</label>
           <span class="help">So I can put a face and a life to your words.</span>
-          <input type="text" id="instagram" name="instagram" placeholder="@yourname" />
+          <input type="text" id="instagram" name="fields[instagram]" placeholder="@yourname" />
         </div>
 
         <!-- 8. A bit about you / your story -->
         <div class="field">
           <label for="story">A bit about you — your story <span class="req">*</span></label>
           <span class="help">Who are you, where are you in life, what are you carrying or leaving or looking for?</span>
-          <textarea id="story" name="your_story" required></textarea>
+          <textarea id="story" name="fields[your_story]" required></textarea>
         </div>
 
         <!-- 9. Anything else -->
         <div class="field">
           <label for="anything">Anything else you want me to know?</label>
           <span class="help">Optional. The thing that didn't fit anywhere above.</span>
-          <textarea id="anything" name="anything_else"></textarea>
+          <textarea id="anything" name="fields[anything_else]"></textarea>
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="btn brass">Send my story to Ellen →</button>
+          <button type="submit" data-element="submit" class="btn brass">Send my story to Ellen →</button>
           <p class="form-fine">I read every single one. If we're a fit for the next step, I'll reach out by email.</p>
         </div>
+        </div><!-- /data-element fields -->
       </form>
-      <!-- ===== END STYLED FALLBACK FORM ===== -->
+      <!-- ===== END APPLICATION FORM ===== -->
 
     </div>
   </div>
@@ -496,7 +501,7 @@
     <p class="signature reveal">With warmth, from the island —<br />Ellen</p>
     <p class="footer-note reveal">
       Follow along, wherever this goes:
-      <a class="footer-handle" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a>
+      <a class="footer-handle" href="https://instagram.com/ellenmarshal" target="_blank" rel="noopener">@ellenmarshal</a>
     </p>
   </div>
 </footer>
@@ -517,5 +522,8 @@
     els.forEach(function(el){ io.observe(el); });
   })();
 </script>
+
+<!-- Kit (ConvertKit) form handler — submits the application via AJAX and shows the inline success message -->
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 </body>
 </html>
