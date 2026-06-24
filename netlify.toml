@@ -1,0 +1,5 @@
+# Netlify build settings for a plain static site.
+# No build step — index.html is published from the repo root as-is.
+[build]
+  publish = "."
+  command = ""
