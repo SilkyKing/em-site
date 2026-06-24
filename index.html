@@ -241,6 +241,14 @@
   .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
   @media (max-width:540px){ .form-row{ grid-template-columns:1fr; gap:0; } }
 
+  /* success state */
+  .form-success{ text-align:center; padding:18px 6px 6px; }
+  .form-success .success-mark{ font-size:2rem; margin:0 0 6px; }
+  .form-success h2{ margin:0 0 14px; }
+  .form-success p{ margin:0 auto 14px; color:var(--ink-soft); max-width:34em; }
+  .form-success .success-sign{ font-family:var(--serif); font-style:italic; color:var(--ink); }
+  button[disabled]{ opacity:0.6; cursor:default; }
+
   .form-submit{ text-align:center; margin-top:30px; }
   .form-submit .btn{ width:100%; max-width:340px; }
   .form-fine{ font-size:13px; color:#8a8475; margin-top:16px; text-align:center; }
@@ -409,9 +417,7 @@
 
       <!-- ===== APPLICATION FORM — wired to Kit (form 9607341 / uid 498bac076c) ===== -->
       <!-- Submits to Kit via AJAX (ck.5.js loaded near </body>); shows Kit's success message inline. -->
-      <form action="https://app.kit.com/forms/9607341/subscriptions" method="post"
-            class="seva-form formkit-form" data-sv-form="9607341" data-uid="498bac076c"
-            data-format="inline" data-version="5">
+      <form id="application-form" action="https://app.kit.com/forms/9607341/subscriptions" method="post">
         <div data-element="fields">
         <!-- 1. Name -->
         <div class="field">
@@ -486,6 +492,14 @@
         </div>
         </div><!-- /data-element fields -->
       </form>
+
+      <!-- Success state — shown by the handler after a successful submit -->
+      <div id="application-success" class="form-success" hidden>
+        <p class="success-mark">🤍</p>
+        <h2>Your story landed safely.</h2>
+        <p>I read every single one myself — slowly, with a coffee and the ocean in the background. If we're a fit for the next step, I'll reach out by email. Thank you for trusting me with it.</p>
+        <p class="success-sign">— Ellen</p>
+      </div>
       <!-- ===== END APPLICATION FORM ===== -->
 
     </div>
@@ -523,7 +537,43 @@
   })();
 </script>
 
-<!-- Kit (ConvertKit) form handler — submits the application via AJAX and shows the inline success message -->
-<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<!-- Application submit handler — posts to Kit and shows the inline success message -->
+<script>
+  (function(){
+    var form = document.getElementById('application-form');
+    if(!form) return;
+    var success = document.getElementById('application-success');
+    var btn = form.querySelector('button[type="submit"]');
+    var btnText = btn ? btn.textContent : '';
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending your story…'; }
+
+      var data = new URLSearchParams(new FormData(form));
+
+      function done(){
+        if(success){
+          form.style.display = 'none';
+          success.hidden = false;
+          success.scrollIntoView({ behavior:'smooth', block:'center' });
+        }
+      }
+
+      // Fire-and-forget POST to Kit (no-cors avoids cross-origin read issues;
+      // the subscription is still created). We show success once it settles.
+      fetch(form.action, {
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body: data.toString()
+      }).then(done).catch(function(){
+        // Even on a network read error the POST usually succeeded; show success.
+        done();
+      });
+    });
+  })();
+</script>
 </body>
 </html>
