@@ -1,42 +1,19 @@
-# em-site
+# ellenmarshal.com
 
-The application landing page for the "room in our villa" invitation — a single,
-self-contained page that collects applications and routes everyone to email.
+Ellen Marshall's personal website, hosted free on GitHub Pages.
 
-**Live site:** _(add your Netlify URL once connected)_
-**Custom domain:** _(add once linked)_
+## Structure
+- `index.html`, `styles.css`, `script.js` — the **main website** at `ellenmarshal.com`.
+- `assets/` — photos and the monogram.
+- `dutch-invite/index.html` — the **villa companion invitation** at `ellenmarshal.com/dutch-invite` (a self-contained page in the same brand).
+- `CNAME` — points the GitHub Pages site at the custom domain. **Do not delete.**
 
----
+## Email lists (Kit / ConvertKit)
+Two separate lists, one Kit account, segmented by which form a subscriber came through:
+- **Letters from Lombok** — the main-site newsletter (Kit form `9607819`).
+- **Dutch Invite** — the villa application (Kit form `9607341`), with all 9 application fields stored as custom fields.
 
-## How this is set up
+Both forms post directly to Kit via a small handler (no page reload) and show an inline success message.
 
-- `index.html` — the entire site. All CSS and JS are inline; no build step, no
-  dependencies. Open it in any browser to preview locally.
-- `assets/` — for future images (the page needs none to work; the design is drawn in CSS).
-- `netlify.toml` — tells Netlify to publish this folder as-is.
-
-Hosting is **Netlify**, connected to this GitHub repo. Every time a change is
-committed here, Netlify rebuilds and the live site updates automatically in ~30 seconds.
-
-## How to make edits (the easy part)
-
-**Small text tweaks, right here on GitHub:**
-1. Click `index.html` above → click the pencil ✏️ (Edit) button.
-2. Make your change → "Commit changes."
-3. Netlify redeploys on its own. Refresh the live site in ~30 seconds.
-
-**Bigger changes:** ask Claude — it edits the file and commits, and the site updates itself.
-
-## Two tokens to personalize in `index.html`
-
-- `@yourhandle` — replace with the real Instagram handle (appears in the footer).
-- The form target — pick one:
-  - **Formspree** (fast test): replace `YOUR_FORM_ID` in `<form action="...">`.
-  - **Kit / ConvertKit** (recommended): paste your Kit embed into the clearly marked
-    `KIT EMBED SLOT` comment block and remove the styled fallback form.
-
-## The 9 application fields
-
-Name · Email · Location · Why this calls to you · Dutch level · Availability ·
-Instagram · Their story · Anything else. Field-to-Kit mapping lives in the funnel
-kit (`04-form-fields.md`).
+## Editing
+Change a file here on GitHub (pencil ✏️ → Commit), and the live site auto-updates in ~30 seconds. The fade-in animations are gated behind a `js` class so the page always renders even without JavaScript.
