@@ -1,0 +1,9 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ellen Marshall monogram</title>
+  <desc id="desc">Elegant EM monogram with palm leaf accent</desc>
+  <rect x="8" y="8" width="204" height="204" rx="102" fill="#F5EFE8" stroke="#C07A5B" stroke-width="2"/>
+  <text x="64" y="99" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#B87558" letter-spacing="-4">E</text>
+  <text x="89" y="151" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#B87558" letter-spacing="-6">M</text>
+  <path d="M139 82c22 8 31 25 30 47-13-20-25-29-48-35m39 18c-14-9-27-13-43-13m37 29c-12-11-25-18-43-23" stroke="#A5B09C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M126 95c18-18 30-24 48-23-16 6-25 14-36 32" stroke="#A5B09C" stroke-width="3" stroke-linecap="round"/>
+</svg>
