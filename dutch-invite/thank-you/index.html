@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you — Ellen Marshal</title>
+  <meta name="description" content="Your application has been received. Thank you for applying." />
+  <meta name="theme-color" content="#F5EFE8" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --cream:#F5EFE8; --cream-deep:#E9DDD0; --sand:#DCC7B8; --sage:#A5B09C;
+      --sea-mist:#C8DADB; --terracotta:#B87558; --clay:#C07A5B; --espresso:#3F342D;
+      --white:#FFFDF9; --shadow:0 30px 80px rgba(63,52,45,.12);
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --script:"The Nautigal",cursive;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0; background:var(--cream); color:var(--espresso);
+      font-family:var(--sans); line-height:1.75; -webkit-font-smoothing:antialiased;
+      min-height:100vh; display:flex; flex-direction:column;
+    }
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(255,255,255,.75), transparent 30%),
+        radial-gradient(circle at 85% 5%, rgba(200,218,219,.45), transparent 27%),
+        linear-gradient(rgba(245,239,232,.76), rgba(245,239,232,.76)),
+        repeating-linear-gradient(90deg, rgba(63,52,45,.018) 0 1px, transparent 1px 7px);
+      mix-blend-mode:multiply;
+    }
+    img{max-width:100%; display:block;}
+    a{color:inherit;}
+
+    .site-header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1.5rem; padding:1rem clamp(1rem,4vw,3rem);
+      border-bottom:1px solid rgba(63,52,45,.08);
+    }
+    .brand{display:inline-flex; align-items:center; gap:.75rem; text-decoration:none; text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; font-weight:500;}
+    .brand img{width:44px; height:44px;}
+    .site-header nav{display:flex; gap:clamp(.8rem,3vw,1.8rem); font-size:.74rem; text-transform:uppercase; letter-spacing:.16em;}
+    .site-header nav a{text-decoration:none; opacity:.72; transition:opacity .2s ease;}
+    .site-header nav a:hover{opacity:1;}
+    @media (max-width:640px){ .brand span{display:none;} }
+
+    main{flex:1; display:flex; align-items:center; justify-content:center; padding:clamp(2.5rem,7vw,5rem) clamp(1.2rem,5vw,2rem);}
+    .card{max-width:680px; text-align:center;}
+    .mono{width:72px; margin:0 auto 1.6rem; opacity:.92;}
+    .eyebrow{margin:0 0 .8rem; color:var(--terracotta); font-size:.76rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase;}
+    h1{font-family:var(--serif); font-weight:500; font-size:clamp(3rem,8vw,5.5rem); letter-spacing:-.03em; line-height:1; margin:0 0 1.6rem; color:var(--espresso);}
+    p{font-size:1.08rem; color:rgba(63,52,45,.82); margin:0 auto 1.2rem; max-width:36em;}
+    .inbox{font-family:var(--serif); font-size:clamp(1.4rem,3vw,1.9rem); line-height:1.3; color:var(--espresso); margin:1.8rem auto;}
+    .sign{font-family:var(--script); font-size:2.4rem; color:var(--terracotta); margin:2rem 0 0;}
+    .rule{height:1px; border:0; background:rgba(63,52,45,.12); width:64px; margin:2rem auto 0;}
+    .back{display:inline-block; margin-top:1.6rem; font-size:.74rem; text-transform:uppercase; letter-spacing:.18em; color:var(--terracotta); text-decoration:none; border-bottom:1px solid rgba(184,117,88,.4); padding-bottom:2px;}
+
+    .site-footer{padding:2rem clamp(1rem,4vw,2rem) 2.5rem; display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; justify-content:center; border-top:1px solid rgba(63,52,45,.1); font-size:.82rem; color:rgba(63,52,45,.68);}
+    .site-footer a{text-decoration:none; border-bottom:1px solid rgba(63,52,45,.22);}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Ellen Marshal home">
+      <img src="../../assets/em-monogram.svg" alt="" />
+      <span>Ellen Marshal</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/#story">Story</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <img class="mono" src="../../assets/em-monogram.svg" alt="Ellen Marshal monogram" />
+      <p class="eyebrow">Application received</p>
+      <h1>Thank you!</h1>
+
+      <p>Your application has been received, and I am genuinely excited to read it.</p>
+      <p>Because we received far more interest than we ever imagined, it'll take us a little time to carefully go through every application. We want to give each one the attention it deserves.</p>
+
+      <p class="inbox">Before you go, please check your inbox. ✉️</p>
+
+      <p>You should receive a confirmation email within the next couple of minutes. If you don't see it, have a quick look in your spam or promotions folder just in case.</p>
+      <p>If, after reading through everything, we think this could be a great fit for both of us, we'll be in touch personally with the next steps and all the details.</p>
+      <p>Thank you again for taking the time to apply. I can't wait to get to know you a little better.</p>
+
+      <p class="sign">Ellen ❤️</p>
+      <hr class="rule" />
+      <a class="back" href="/">Back to Ellen's world</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://www.instagram.com/ellenmarshal/" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:hello@ellenmarshal.com">Contact</a>
+    <small>© <span id="yr"></span> Ellen Marshal</small>
+  </footer>
+
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
