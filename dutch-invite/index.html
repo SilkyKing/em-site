@@ -259,9 +259,15 @@
           <!-- Posts to Kit form 9607341 via the handler at the end of the page. -->
           <form id="application-form" action="https://app.kit.com/forms/9607341/subscriptions" method="post">
             <div data-element="fields">
-            <div class="field">
-              <label for="name">Your name <span class="req">*</span></label>
-              <input type="text" id="name" name="fields[first_name]" autocomplete="name" required />
+            <div class="form-row">
+              <div class="field">
+                <label for="first-name">First name <span class="req">*</span></label>
+                <input type="text" id="first-name" name="fields[first_name]" autocomplete="given-name" required />
+              </div>
+              <div class="field">
+                <label for="last-name">Last name <span class="req">*</span></label>
+                <input type="text" id="last-name" name="fields[last_name]" autocomplete="family-name" required />
+              </div>
             </div>
             <div class="field">
               <label for="email">Email <span class="req">*</span></label>
