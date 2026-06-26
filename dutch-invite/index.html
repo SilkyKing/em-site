@@ -309,13 +309,6 @@
             </div>
             </div><!-- /fields -->
           </form>
-
-          <div id="application-success" class="form-success" hidden>
-            <p class="mark">🤍</p>
-            <h2>Your story landed safely.</h2>
-            <p>I read every single one myself — slowly, with a coffee and the ocean in the background. If we're a fit for the next step, I'll reach out by email. Thank you for trusting me with it.</p>
-            <p class="sign">— Ellen</p>
-          </div>
         </div>
       </div>
     </section>
@@ -341,17 +334,16 @@
       } else { els.forEach(function(el){el.classList.add('is-visible');}); }
     })();
 
-    // Application submit → Kit (form 9607341), inline success.
+    // Application submit → Kit (form 9607341), then redirect to the thank-you page.
     (function(){
       var form=document.getElementById('application-form'); if(!form) return;
-      var success=document.getElementById('application-success');
       var btn=form.querySelector('button[type="submit"]');
       form.addEventListener('submit', function(e){
         e.preventDefault();
         if(!form.checkValidity()){ form.reportValidity(); return; }
         if(btn){ btn.disabled=true; btn.textContent='Sending your story…'; }
         var data=new URLSearchParams(new FormData(form));
-        var done=function(){ if(success){ form.style.display='none'; success.hidden=false; success.scrollIntoView({behavior:'smooth', block:'center'}); } };
+        var done=function(){ window.location.href='/dutch-invite/thank-you/'; };
         fetch(form.action, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data.toString()}).then(done).catch(done);
       });
     })();
